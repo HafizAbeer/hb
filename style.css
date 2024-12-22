@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    margin-bottom: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-block span:first-child {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ff6b6b;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hearts Animation */
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.hbd-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ff6b6b;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff6b6b;
+    transform: rotate(45deg);
+    animation: heartFloat 4s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff6b6b;
+    border-radius: 50%;
+}
+
+.heart:before {
+    left: -10px;
+}
+
+.heart:after {
+    top: -10px;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 50%;
+    animation-delay: 1.5s;
+}
+
+.heart:nth-child(3) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: rotate(45deg) translateY(0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: rotate(45deg) translateY(-100px) scale(1.2);
+        opacity: 0.6;
+    }
+    100% {
+        transform: rotate(45deg) translateY(-200px) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .countdown {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .time-block span:first-child {
+        font-size: 2rem;
+    }
+} 
